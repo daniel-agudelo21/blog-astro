@@ -1,14 +1,61 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+const pageTitle = "Sobre mi";
+
+const identity = {
+    firstName: "Daniel",
+    country: "Colombia",
+    occupation: "Web Developer",
+    hobbies: ["Jugar videojuegos", "Caminar", "Sentir la naturaleza"],
+};
+
+const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Astro",
+    "TailWind",
+    "NextJs",
+    "NodeJs",
+    "Postgres",
+    "SQL",
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
-<Layout title="sobre mi" description="">
+<Layout title={pageTitle} description="">
     <a href="/">Inicio</a>
-    <a href="/blog">Blog</a>
+    <a href="/blog">Temas varios</a>
     <main>
-        <h1 class="font-bold text-3xl">Sobre mi</h1>
-        <h2>Este es una pagina que cree para practicar Astro pero <strong> posiblemente </strong> la vuelva una pagina para hablar un poco sobre cosas que me interesan y de mi en general.</h2>
-        
+        <h1 class="font-bold text-3xl">{pageTitle}</h1>
+        <h2>
+            Este es una pagina que cree para practicar Astro pero <strong>
+                posiblemente
+            </strong> la vuelva una pagina para hablar un poco sobre cosas que
+            me interesan y de mi en general.
+        </h2>
+        <p>
+            Bueno primero me presento, soy {identity.firstName}. Soy de 
+            {identity.country}, y trabajo como {identity.occupation}.
+        </p>
+        {
+            identity.hobbies.length >= 2 && (
+                <p>
+                    dos de mis hobbies favoritos son: {identity.hobbies[0]} y{" "}
+                    {identity.hobbies[2]}
+                </p>
+            )
+        }
+        <p>Tengo habilidades en:</p>
+        <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+        {happy && <p>Estoy feliz de aprender Astro</p>}
+        {finished && <p>Termine este tutorial</p>}
+        {goal === 3 ? <p>Mi objetivo es terminarlo en 3 dias</p> : <p>Mi objetivo no es terminarlo en 3 dias</p>}
     </main>
 </Layout>
