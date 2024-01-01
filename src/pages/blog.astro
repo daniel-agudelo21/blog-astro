@@ -1,24 +1,35 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const pageTitle = 'Temas varios'
+
+const pageTitle = "Temas varios";
 ---
 
 <Layout title={pageTitle} description="blog zone">
-    <a href="/">Inicio</a>
-    <a href="/about">sobre mi</a>
-    <main>
-        <h1  class="font-bold text-3xl">{pageTitle}</h1>
-        <h2>Aca es donde pondre mi travesia aprendiendo Astro</h2>
-        <ul>
-            <li>
-                <a href="/posts/post-1/">Post 1</a>
-            </li>
-            <li>
-                <a href="/posts/post-2/">Post 2</a>
-            </li>
-            <li>
-                <a href="/posts/post-3/">Post 3</a>
-            </li>
-        </ul>
-    </main>
+    <div
+        class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    >
+    </div>
+    <nav class="flex flex-row gap-4 items-center justify-center">
+        <a href="/" class="hover:bg-gray-400 hover:rounded-sm px-1">Inicio</a>
+        <a href="/about" class="hover:bg-gray-400 hover:rounded-sm px-1"
+            >Sobre mi</a
+        >
+    </nav>
+    <div class="flex justify-center">
+        <main class="">
+            <h1 class="font-bold text-3xl flex justify-center py-4">{pageTitle}</h1>
+            <h2>Aca es donde pondre mi travesia aprendiendo Astro</h2>
+            <ul class="py-2">
+                <li>
+                    <a href="/posts/post-1/">Post 1</a>
+                </li>
+                <li>
+                    <a href="/posts/post-2/">Post 2</a>
+                </li>
+                <li>
+                    <a href="/posts/post-3/">Post 3</a>
+                </li>
+            </ul>
+        </main>
+    </div>
 </Layout>

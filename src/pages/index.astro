@@ -1,15 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const pageTitle = 'Blog personal de Daniel'
+
+const pageTitle = "Blog personal de Daniel";
 ---
 
 <Layout
 	title={pageTitle}
 	description="Bienvenidos a mi blog, puedes ver topics de cualquier tipo; cosas personales como cosas de programacion que me interesaron."
 >
-<a href="/about">sobre mi</a>
-<a href="/blog">Temas varios</a>
-	<main>
-
-	</main>
+	<div
+		class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+	>
+	</div>
+	<nav class="flex flex-row gap-4 items-center justify-center">
+		<a href="/about" class="hover:bg-gray-400 hover:rounded-sm px-1"
+			>sobre mi</a
+		>
+		<a href="/blog" class="hover:bg-gray-400 hover:rounded-sm px-1"
+			>Temas varios</a
+		>
+	</nav>
+	<main></main>
 </Layout>
